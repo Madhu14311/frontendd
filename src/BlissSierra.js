@@ -43,7 +43,7 @@ function BlissSierra() {
   const handleSubmitContact = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/contact", contact);
+      await axios.post("https://backend-x95t.onrender.com/contact", contact);
       setShowSuccess(true);
       setTimeout(() => setShowSuccess(false), 3000);
       setContact({ name: "", email: "", phone: "", message: "" });
@@ -85,7 +85,7 @@ function BlissSierra() {
  
 
       // ✅ Fixed endpoint
-      await axios.post("http://localhost:5000/formData", fd, {
+      await axios.post("https://backend-x95t.onrender.com/formData", fd, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

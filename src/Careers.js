@@ -50,7 +50,7 @@ const Careers = () => {
     fd.append("file", formData.file);
 
     try {
-      await axios.post("https://bliss-3.onrender.com/formData", fd, {
+      await axios.post("https://backend-x95t.onrender.com/formData", fd, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
