@@ -19,6 +19,8 @@ import feimg from "./feimg.jpg";
 
 import axios from "axios";
 
+const BASE_URL = "https://backend-x95t.onrender.com";
+
 function BlissSierra() {
   const [activeBlock, setActiveBlock] = useState(null);
   const [zoomSrc, setZoomSrc] = useState(null);
@@ -43,7 +45,9 @@ function BlissSierra() {
   const handleSubmitContact = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://backend-x95t.onrender.com/contact", contact);
+          const response = await axios.post(`${BASE_URL}/contact`, contact);
+          alert(response.data.message);
+
       setShowSuccess(true);
       setTimeout(() => setShowSuccess(false), 3000);
       setContact({ name: "", email: "", phone: "", message: "" });
@@ -85,9 +89,8 @@ function BlissSierra() {
  
 
       // ✅ Fixed endpoint
-      await axios.post("https://backend-x95t.onrender.com/formData", fd, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      const response = await axios.post(`${BASE_URL}/formData`, formData);
+      alert(response.data.message);
 
       setShowPopup(true);
       setModalVisible(false);
