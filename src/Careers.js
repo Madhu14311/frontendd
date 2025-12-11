@@ -63,6 +63,7 @@ const Careers = () => {
         job: "",
         message: "",
         file: null,
+        
       });
     } catch (err) {
       alert("Error submitting application. Please try again.");
